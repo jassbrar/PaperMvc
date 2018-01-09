@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Paper2.Models.SecondTable>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CarID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Milage)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Milage)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Year }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Year }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Year })
+        </td>
+    </tr>
+}
+
+</table>
